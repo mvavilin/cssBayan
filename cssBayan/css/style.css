@@ -12,13 +12,16 @@ html {
     for easy calculation of child element properties in rem. */
     font-size: 10px;
 
+    /* Variables */
     --main-color: #16161d;
     --active-color: #246edb;
     --bg-color: #f5f5eb;
+    --transparent-color: transparent;
     --main-indent: 2rem;
-    --pointing-color: transparent;
     --animation-time: .3s;
+    --animation-type: ease-in-out;
     --plus-size: 1.5rem;
+    --image-card-size: 30rem;
 }
 body {
     font-size: 1.8rem;
@@ -27,9 +30,14 @@ body {
     background-color: var(--bg-color);
 }
 .ac-wrapper {
-    max-width: calc(100% - 10%);
+    max-width: 90%;
     margin: auto;
     padding: 5%;
+}
+.ac-header {
+    font-weight: bold;
+    font-size: 3.2rem;
+    padding-bottom: var(--main-indent);
 }
 .ac-cards:hover > .ac-card {
     color: var(--active-color);
@@ -37,37 +45,27 @@ body {
 .ac-cards:hover > .ac-card > .ac-label > .ac-plus path {
     fill: var(--active-color);
 }
-.ac-header {
-    font-weight: bold;
-    font-size: 3.2rem;
-    padding-bottom: var(--main-indent);
-}
 .ac-card {
-    transition: all var(--animation-time) ease-in-out;
-    cursor: pointer;
+    transition: color var(--animation-time) ease-in-out;
 }
 .ac-item {
     display: none;
 }
-.ac-item:checked + label {
+.ac-item:checked + .ac-label {
     color: var(--active-color);
 }
 .ac-item:checked + .ac-label > .ac-plus {
-    transition: all var(--animation-time) ease-in-out;
     transform: rotate(45deg);
+    transition: transform var(--animation-time) var(--animation-type);
 }
 .ac-item:checked + .ac-label > .ac-plus path {
     fill: var(--active-color);
 }
-.ac-item:checked + label + .ac-body {
-    transition: all var(--animation-time) ease-in-out;
-    height: 30rem;
+.ac-item:checked + .ac-label + .ac-body,
+.ac-item:hover + .ac-label + .ac-body {
+    height: var(--image-card-size);
     margin-bottom: var(--main-indent);
-}
-.ac-item:hover + label + .ac-body {
-    transition: all var(--animation-time) ease-in-out;
-    height: 30rem;
-    margin-bottom: var(--main-indent);
+    transition: all var(--animation-time) var(--animation-type);
 }
 .ac-label {
     cursor: pointer;
@@ -81,21 +79,21 @@ body {
     padding-right: var(--main-indent);
 }
 .ac-plus {
-    transition: all var(--animation-time) ease-in-out;
     display: inline-block;
     max-width: var(--plus-size);
     max-height: var(--plus-size);
     transform: rotate(0);
+    transition: transform var(--animation-time) var(--animation-type);
 }
 .ac-plus path {
-    fill: var(--pointing-color);
-    transition: all var(--animation-time) ease-in-out;
+    fill: var(--transparent-color);
+    transition: all var(--animation-time) var(--animation-type);
 }
 .ac-body {
-    transition: all var(--animation-time) ease-in-out;
+    cursor: pointer;
     height: 0;
-    margin: auto;
     overflow: hidden;
+    transition: all var(--animation-time) var(--animation-type);
 }
 .ac-img-1 {
     background: url('../img/ac-imgs/1.jpg') center/contain no-repeat;
