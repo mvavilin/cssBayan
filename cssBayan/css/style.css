@@ -1,3 +1,95 @@
 @import "reset.css";
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    width: 0;
+}
+html {
+    /* Add a base font size for the html tag of 10px 
+    for easy calculation of child element properties in rem. */
+    font-size: 10px;
+
+    --main-color: #16161d;
+    --active-color: #246edb;
+    --bg-color: #f5f5eb;
+    --main-indent: 2rem;
+    --pointing-color: transparent;
+    --animation-time: .3s;
+    --plus-size: 1.5rem;
+}
+body {
+    font-size: 1.8rem;
+    font-family: Lato, Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--main-color);
+    background-color: var(--bg-color);
+}
+.ac-wrapper {
+    max-width: calc(100% - 10%);
+    margin: auto;
+    padding: 5%;
+}
+.ac-cards:hover > .ac-card {
+    color: var(--active-color);
+}
+.ac-cards:hover > .ac-card > .ac-label > .ac-plus path {
+    fill: var(--active-color);
+}
+.ac-header {
+    font-weight: bold;
+    font-size: 3.2rem;
+    padding-bottom: var(--main-indent);
+}
+.ac-card {
+    transition: all var(--animation-time) ease-in-out;
+}
+.ac-item {
+    display: none;
+}
+.ac-item:checked + label {
+    color: var(--active-color);
+}
+.ac-item:checked + .ac-label > .ac-plus {
+    transition: all var(--animation-time) ease-in-out;
+    transform: rotate(45deg);
+}
+.ac-item:checked + .ac-label > .ac-plus path {
+    fill: var(--active-color);
+}
+.ac-item:checked + label + .ac-body {
+    transition: all var(--animation-time) ease-in-out;
+    height: auto;
+}
+.ac-item:hover + label + .ac-body {
+    transition: all var(--animation-time) ease-in-out;
+    height: auto;
+}
+.ac-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--main-indent) 0;
+    border-top: 1px solid var(--main-color);
+}
+.ac-plus {
+    display: inline-block;
+    max-width: var(--plus-size);
+    max-height: var(--plus-size);
+}
+.ac-plus path {
+    fill: var(--pointing-color);
+    transition: all .3s ease-out;
+}
+.ac-body {
+    max-width: 50%;
+    margin: auto;
+    height: 0;
+    overflow: hidden;
+}
+.ac-img {
+    max-width: 100%;
+    display: inline-block;
+    margin-bottom: var(--main-indent);
+}
