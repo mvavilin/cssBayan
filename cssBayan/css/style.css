@@ -1,0 +1,141 @@
+@import "reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+/*  */
+* {
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    width: 0;
+}
+html {
+    /* Add a base font size for the html tag of 10px 
+    for easy calculation of child element properties in rem. */
+    font-size: 10px;
+}
+body {
+    background-color: var(--bg-color);
+    font-size: var(--basic-font-size);
+    color: var(--main-color);
+    font-family: Lato, Verdana, Geneva, Tahoma, sans-serif;
+}
+.ac-wrapper {
+    max-width: 90%;
+    margin: auto;
+    padding: 3% 5%;
+}
+.ac-header {
+    font-weight: bold;
+    font-size: calc(var(--basic-font-size) * 2);
+    padding-bottom: var(--main-indent);
+}
+.ac-cards:hover > .ac-card {
+    color: var(--active-color);
+}
+.ac-cards:hover > .ac-card > .ac-label > .ac-caption > .ac-plus path {
+    fill: var(--active-color);
+}
+.ac-card {
+    transition: color var(--animation-time) ease-in-out;
+}
+.ac-item {
+    display: none;
+}
+.ac-item:checked ~ .ac-label {
+    color: var(--active-color);
+}
+.ac-item:checked + .ac-label > .ac-caption > .ac-plus {
+    transform: rotate(45deg);
+    transition: transform var(--animation-time) var(--animation-type);
+}
+.ac-item:hover + .ac-label > .ac-caption > .ac-plus path {
+    fill: var(--active-color);
+}
+.ac-item:checked + .ac-label > .ac-body,
+.ac-item:hover + .ac-label > .ac-body,
+.ac-body:hover {
+    height: var(--image-card-size);
+    margin-top: var(--main-indent);
+    transition: all var(--animation-time) var(--animation-type);
+}
+.ac-label {
+    cursor: pointer;
+    display: block;
+    padding: var(--main-indent) 0;
+    border-top: 0.1rem solid var(--main-color);
+}
+.ac-plus {
+    display: inline-block;
+    max-width: var(--plus-size);
+    max-height: var(--plus-size);
+    transform: rotate(0);
+    transition: transform var(--animation-time) var(--animation-type);
+}
+.ac-plus path {
+    fill: var(--transparent-color);
+    transition: all var(--animation-time) var(--animation-type);
+}
+.ac-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ac-caption > span {
+    display: inline-block;
+    padding-right: var(--main-indent);
+}
+.ac-body {
+    cursor: pointer;
+    height: 0;
+    overflow: hidden;
+    transition: all var(--animation-time) var(--animation-type);
+}
+.ac-img-1 {
+    background: url('../img/ac-imgs/1.jpg') center/contain no-repeat;
+}
+.ac-img-2 {
+    background: url('../img/ac-imgs/2.jpg') center/contain no-repeat;
+}
+.ac-img-3 {
+    background: url('../img/ac-imgs/3.jpg') center/contain no-repeat;
+}
+.ac-img-4 {
+    background: url('../img/ac-imgs/4.jpg') center/contain no-repeat;
+}
+.ac-img-5 {
+    background: url('../img/ac-imgs/5.jpg') center/contain no-repeat;
+}
+
+/* Media queries */
+@media (max-width: 1920px) {
+    body {
+        /* Variables */
+        --main-color: #16161d;
+        --transparent-color: transparent;
+        --main-indent: 2rem;
+        --animation-time: .4s;
+        --animation-type: ease-in-out;
+        --plus-size: 1.5rem;
+        --image-card-size: 40rem;
+
+        --basic-font-size: 2rem;
+        --active-color: #7986cb;
+        --bg-color: #e8eaf6;
+        transition: all var(--animation-time) var(--animation-type);
+    }
+}
+@media (max-width: 768px) {
+    body {
+        --basic-font-size: 1.8rem;
+        --active-color: #4dd0e1;
+        --bg-color: #e0f7fa;
+        transition: all var(--animation-time) var(--animation-type);
+    }
+}
+@media (max-width: 320px) {
+    body {
+        --basic-font-size: 1.6rem;
+        --active-color: #aed581;
+        --bg-color: #f1f8e9;
+        transition: all var(--animation-time) var(--animation-type);
+    } 
+}
