@@ -106,7 +106,7 @@ body {
 }
 
 /* Media queries */
-@media (max-width: 192rem) {
+@media (max-width: 1920px) {
     body {
         /* Variables */
         --main-color: #16161d;
@@ -123,7 +123,7 @@ body {
         transition: all var(--animation-time) var(--animation-type);
     }
 }
-@media (max-width: 76.8rem) {
+@media (max-width: 768px) {
     body {
         --basic-font-size: 1.8rem;
         --active-color: #4dd0e1;
@@ -131,7 +131,7 @@ body {
         transition: all var(--animation-time) var(--animation-type);
     }
 }
-@media (max-width: 32rem) {
+@media (max-width: 320px) {
     body {
         --basic-font-size: 1.6rem;
         --active-color: #aed581;
