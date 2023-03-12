@@ -44,6 +44,7 @@ body {
 }
 .ac-card {
     transition: all var(--animation-time) ease-in-out;
+    cursor: pointer;
 }
 .ac-item {
     display: none;
@@ -60,36 +61,54 @@ body {
 }
 .ac-item:checked + label + .ac-body {
     transition: all var(--animation-time) ease-in-out;
-    height: auto;
+    height: 30rem;
+    margin-bottom: var(--main-indent);
 }
 .ac-item:hover + label + .ac-body {
     transition: all var(--animation-time) ease-in-out;
-    height: auto;
+    height: 30rem;
+    margin-bottom: var(--main-indent);
 }
 .ac-label {
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: var(--main-indent) 0;
     border-top: 1px solid var(--main-color);
 }
+.ac-label > span {
+    padding-right: var(--main-indent);
+}
 .ac-plus {
+    transition: all var(--animation-time) ease-in-out;
     display: inline-block;
     max-width: var(--plus-size);
     max-height: var(--plus-size);
+    transform: rotate(0);
 }
 .ac-plus path {
     fill: var(--pointing-color);
-    transition: all .3s ease-out;
+    transition: all var(--animation-time) ease-in-out;
 }
 .ac-body {
-    max-width: 50%;
-    margin: auto;
+    transition: all var(--animation-time) ease-in-out;
     height: 0;
+    margin: auto;
     overflow: hidden;
 }
-.ac-img {
-    max-width: 100%;
-    display: inline-block;
-    margin-bottom: var(--main-indent);
+.ac-img-1 {
+    background: url('../img/ac-imgs/1.jpg') center/contain no-repeat;
+}
+.ac-img-2 {
+    background: url('../img/ac-imgs/2.jpg') center/contain no-repeat;
+}
+.ac-img-3 {
+    background: url('../img/ac-imgs/3.jpg') center/contain no-repeat;
+}
+.ac-img-4 {
+    background: url('../img/ac-imgs/4.jpg') center/contain no-repeat;
+}
+.ac-img-5 {
+    background: url('../img/ac-imgs/5.jpg') center/contain no-repeat;
 }
