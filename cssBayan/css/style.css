@@ -13,7 +13,8 @@ html {
     font-size: 10px;
 }
 body {
-    font-size: 1.8rem;
+    background-color: var(--bg-color);
+    font-size: var(--basic-font-size);
     color: var(--main-color);
     font-family: Lato, Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -24,7 +25,7 @@ body {
 }
 .ac-header {
     font-weight: bold;
-    font-size: 3.2rem;
+    font-size: calc(var(--basic-font-size) * 2);
     padding-bottom: var(--main-indent);
 }
 .ac-cards:hover > .ac-card {
@@ -116,25 +117,25 @@ body {
         --plus-size: 1.5rem;
         --image-card-size: 40rem;
 
+        --basic-font-size: 2rem;
         --active-color: #7986cb;
         --bg-color: #e8eaf6;
-        background-color: var(--bg-color);
         transition: all var(--animation-time) var(--animation-type);
     }
 }
 @media (max-width: 76.8rem) {
     body {
+        --basic-font-size: 1.8rem;
         --active-color: #4dd0e1;
         --bg-color: #e0f7fa;
-        background-color: var(--bg-color);
         transition: all var(--animation-time) var(--animation-type);
     }
 }
 @media (max-width: 32rem) {
     body {
+        --basic-font-size: 1.6rem;
         --active-color: #aed581;
         --bg-color: #f1f8e9;
-        background-color: var(--bg-color);
         transition: all var(--animation-time) var(--animation-type);
     } 
 }
