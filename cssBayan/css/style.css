@@ -60,7 +60,7 @@ body {
     cursor: pointer;
     display: block;
     padding: var(--main-indent) 0;
-    border-top: 1px solid var(--main-color);
+    border-top: 0.1rem solid var(--main-color);
 }
 .ac-plus {
     display: inline-block;
