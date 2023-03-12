@@ -20,7 +20,7 @@ body {
 .ac-wrapper {
     max-width: 90%;
     margin: auto;
-    padding: 5%;
+    padding: 3% 5%;
 }
 .ac-header {
     font-weight: bold;
@@ -30,7 +30,7 @@ body {
 .ac-cards:hover > .ac-card {
     color: var(--active-color);
 }
-.ac-cards:hover > .ac-card > .ac-label > .ac-plus path {
+.ac-cards:hover > .ac-card > .ac-label > .ac-caption > .ac-plus path {
     fill: var(--active-color);
 }
 .ac-card {
@@ -39,32 +39,28 @@ body {
 .ac-item {
     display: none;
 }
-.ac-item:checked + .ac-label {
+.ac-item:checked ~ .ac-label {
     color: var(--active-color);
 }
-.ac-item:checked + .ac-label > .ac-plus {
+.ac-item:checked + .ac-label > .ac-caption > .ac-plus {
     transform: rotate(45deg);
     transition: transform var(--animation-time) var(--animation-type);
 }
-.ac-item:checked + .ac-label > .ac-plus path {
+.ac-item:hover + .ac-label > .ac-caption > .ac-plus path {
     fill: var(--active-color);
 }
-.ac-item:checked + .ac-label + .ac-body,
-.ac-item:hover + .ac-label + .ac-body {
+.ac-item:checked + .ac-label > .ac-body,
+.ac-item:hover + .ac-label > .ac-body,
+.ac-body:hover {
     height: var(--image-card-size);
-    margin-bottom: var(--main-indent);
+    margin-top: var(--main-indent);
     transition: all var(--animation-time) var(--animation-type);
 }
 .ac-label {
     cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: block;
     padding: var(--main-indent) 0;
     border-top: 1px solid var(--main-color);
-}
-.ac-label > span {
-    padding-right: var(--main-indent);
 }
 .ac-plus {
     display: inline-block;
@@ -76,6 +72,15 @@ body {
 .ac-plus path {
     fill: var(--transparent-color);
     transition: all var(--animation-time) var(--animation-type);
+}
+.ac-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ac-caption > span {
+    display: inline-block;
+    padding-right: var(--main-indent);
 }
 .ac-body {
     cursor: pointer;
@@ -99,14 +104,14 @@ body {
     background: url('../img/ac-imgs/5.jpg') center/contain no-repeat;
 }
 
-
+/* Media queries */
 @media (max-width: 192rem) {
     body {
         /* Variables */
         --main-color: #16161d;
         --transparent-color: transparent;
         --main-indent: 2rem;
-        --animation-time: .3s;
+        --animation-time: .4s;
         --animation-type: ease-in-out;
         --plus-size: 1.5rem;
         --image-card-size: 40rem;
