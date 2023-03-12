@@ -11,23 +11,11 @@ html {
     /* Add a base font size for the html tag of 10px 
     for easy calculation of child element properties in rem. */
     font-size: 10px;
-
-    /* Variables */
-    --main-color: #16161d;
-    --active-color: #246edb;
-    --bg-color: #f5f5eb;
-    --transparent-color: transparent;
-    --main-indent: 2rem;
-    --animation-time: .3s;
-    --animation-type: ease-in-out;
-    --plus-size: 1.5rem;
-    --image-card-size: 30rem;
 }
 body {
     font-size: 1.8rem;
-    font-family: Lato, Verdana, Geneva, Tahoma, sans-serif;
     color: var(--main-color);
-    background-color: var(--bg-color);
+    font-family: Lato, Verdana, Geneva, Tahoma, sans-serif;
 }
 .ac-wrapper {
     max-width: 90%;
@@ -109,4 +97,39 @@ body {
 }
 .ac-img-5 {
     background: url('../img/ac-imgs/5.jpg') center/contain no-repeat;
+}
+
+
+@media (max-width: 192rem) {
+    body {
+        /* Variables */
+        --main-color: #16161d;
+        --transparent-color: transparent;
+        --main-indent: 2rem;
+        --animation-time: .3s;
+        --animation-type: ease-in-out;
+        --plus-size: 1.5rem;
+        --image-card-size: 40rem;
+
+        --active-color: #7986cb;
+        --bg-color: #e8eaf6;
+        background-color: var(--bg-color);
+        transition: all var(--animation-time) var(--animation-type);
+    }
+}
+@media (max-width: 76.8rem) {
+    body {
+        --active-color: #4dd0e1;
+        --bg-color: #e0f7fa;
+        background-color: var(--bg-color);
+        transition: all var(--animation-time) var(--animation-type);
+    }
+}
+@media (max-width: 32rem) {
+    body {
+        --active-color: #aed581;
+        --bg-color: #f1f8e9;
+        background-color: var(--bg-color);
+        transition: all var(--animation-time) var(--animation-type);
+    } 
 }
